@@ -39,7 +39,10 @@ def take_screenshot():
         cmd = [                                                                                                                  
             'chromium-browser',                                                                                                  
             '--headless',                                                                                                        
-            '--disable-gpu',                                                                                                     
+            '--ignore-gpu-blocklist',
+            '--enable-unsafe-webgpu',         
+            '--use-gl=angle',       
+            '--use-angle=gl-egl',                                                                                        
             '--no-sandbox',
             '--hide-scrollbars',
             f'--user-data-dir={temp_dir}',                                                                                      
