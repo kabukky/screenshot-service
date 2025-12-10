@@ -41,6 +41,7 @@ def take_screenshot():
             '--headless',                                                                                                        
             '--disable-gpu',                                                                                                     
             '--no-sandbox',
+            '--hide-scrollbars',
             f'--user-data-dir={temp_dir}',                                                                                      
             f'--screenshot={filename}',                                                                                          
             f'--window-size={width},{height}',                                                                                   
