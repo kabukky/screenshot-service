@@ -38,13 +38,13 @@ def take_screenshot():
         # Construct the command                                                                                                  
         cmd = [                                                                                                                  
             'chromium-browser',                                                                                                  
-            '--headless=old',                                                                                                        
+            '--headless',                                                                                                        
             '--disable-gpu',                                                                                                     
             '--no-sandbox',
             '--hide-scrollbars',
             f'--user-data-dir={temp_dir}',                                                                                      
             f'--screenshot={filename}',                                                                                          
-            f'--window-size={width},{height}',                                                                                   
+            f'--window-size={width},{height+124}',                                                                                   
             f'--virtual-time-budget={time_budget}',
             f'--user-agent="{userAgent}"',                                                                               
             url                                                                                                                  
