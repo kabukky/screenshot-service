@@ -44,7 +44,7 @@ def take_screenshot():
             '--hide-scrollbars',
             f'--user-data-dir={temp_dir}',                                                                                      
             f'--screenshot={filename}',                                                                                          
-            f'--window-size={width},{height+124}',                                                                                   
+            f'--window-size={width},{height}',                                                                                   
             f'--virtual-time-budget={time_budget}',
             f'--user-agent="{userAgent}"',                                                                               
             url                                                                                                                  
