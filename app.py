@@ -38,7 +38,7 @@ def take_screenshot():
         # Construct the command                                                                                                  
         cmd = [                                                                                                                  
             'chromium-browser',                                                                                                  
-            '--headless',                                                                                                        
+            '--headless=old',                                                                                                        
             '--disable-gpu',                                                                                                     
             '--no-sandbox',
             '--hide-scrollbars',
