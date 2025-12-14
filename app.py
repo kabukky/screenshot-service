@@ -42,6 +42,7 @@ def take_screenshot():
             '--disable-gpu',                                                                                                     
             '--no-sandbox',
             '--hide-scrollbars',
+            '--disable-features=VizDisplayCompositor',
             f'--virtual-time-budget={time_budget}',
             f'--user-data-dir={temp_dir}',                                                                                      
             f'--screenshot={filename}',                                                                                          
