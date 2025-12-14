@@ -27,7 +27,7 @@ def take_screenshot():
                                                                                                                                 
     width = request.args.get('width', '1280')                                                                                    
     height = request.args.get('height', '900')                                                                                   
-    time_budget = request.args.get('time_budget', '1000')
+    time_budget = request.args.get('timeout', '5000')
     userAgent= request.args.get('user_agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36')                                                                       
                                                                                                                                 
     # Generate unique filename and temp directory for this request                                                                                  
@@ -37,7 +37,8 @@ def take_screenshot():
     try:                                                                                                                         
         # Construct the command                                                                                                  
         cmd = [                                                                                                                  
-            'chromium-browser',                                                                                                  
+            'chromium-browser',   
+            f'--timeout={timeout}',                                                                                               
             '--headless',                                                                                                        
             '--disable-gpu',                                                                                                     
             '--no-sandbox',
@@ -45,7 +46,6 @@ def take_screenshot():
             f'--user-data-dir={temp_dir}',                                                                                      
             f'--screenshot={filename}',                                                                                          
             f'--window-size={width},{height}',                                                                                   
-            f'--virtual-time-budget={time_budget}',
             f'--user-agent="{userAgent}"',                                                                               
             url                                                                                                                  
         ]                                                                                                                        
