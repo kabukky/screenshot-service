@@ -27,7 +27,7 @@ def take_screenshot():
                                                                                                                                 
     width = request.args.get('width', '1280')                                                                                    
     height = request.args.get('height', '900')                                                                                   
-    timeout = request.args.get('timeout', '5000')
+    time_budget = request.args.get('time_budget', '5000')
     userAgent= request.args.get('user_agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36')                                                                       
                                                                                                                                 
     # Generate unique filename and temp directory for this request                                                                                  
@@ -37,12 +37,12 @@ def take_screenshot():
     try:                                                                                                                         
         # Construct the command                                                                                                  
         cmd = [                                                                                                                  
-            'chromium-browser',                                                                                                
+            'chromium-browser',                                                                                                  
             '--headless',                                                                                                        
             '--disable-gpu',                                                                                                     
             '--no-sandbox',
             '--hide-scrollbars',
-            f'--timeout={timeout}',  
+            f'--virtual-time-budget={time_budget}',
             f'--user-data-dir={temp_dir}',                                                                                      
             f'--screenshot={filename}',                                                                                          
             f'--window-size={width},{height}',                                                                                   
