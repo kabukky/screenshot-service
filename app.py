@@ -37,12 +37,12 @@ def take_screenshot():
     try:                                                                                                                         
         # Construct the command                                                                                                  
         cmd = [                                                                                                                  
-            'chromium-browser',   
-            f'--timeout={timeout}',                                                                                               
+            'chromium-browser',                                                                                                
             '--headless',                                                                                                        
             '--disable-gpu',                                                                                                     
             '--no-sandbox',
             '--hide-scrollbars',
+            f'--timeout={timeout}',  
             f'--user-data-dir={temp_dir}',                                                                                      
             f'--screenshot={filename}',                                                                                          
             f'--window-size={width},{height}',                                                                                   
